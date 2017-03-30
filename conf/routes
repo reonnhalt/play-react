@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET     /                           controllers.ReactTest.index
+GET     /home                       controllers.HomeController.index
+GET     /count                      controllers.CountController.count
+GET     /message                    controllers.AsyncController.message
+
+GET     /getJson                    controllers.ReactTest.getJson
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /webjars/*file              controllers.WebJarAssets.versioned(file)
