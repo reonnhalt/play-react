@@ -10,7 +10,6 @@ class ReactTest extends Controller {
 		Ok(views.html.reactTest("Reactのテスト"))
 	}
 	def getJson = Action {
-		println("ここには来てる") 
 		val sendJson = Json.toJson(Seq("test1","test2","test3","test4"))
 		Ok(sendJson)
 	}

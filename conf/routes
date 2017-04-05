@@ -10,7 +10,5 @@ GET     /message                    controllers.AsyncController.message
 
 GET     /getJson                    controllers.ReactTest.getJson
 
-# Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
-
-GET     /webjars/*file              controllers.WebJarAssets.versioned(file)
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
