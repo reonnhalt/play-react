@@ -1,0 +1,21 @@
+
+・build.sbtに以下の2つを追加
+"org.webjars" % "react" % "15.3.2"←react本体
+"org.webjars" % "superagent" % "1.4.0"←非同期通信ライブラリ
+
+・plugins.sbtに以下を追加
+addSbtPlugin("com.github.ddispaltro" % "sbt-reactjs" % "0.6.8")←sbtでjsxファイルをコンパイルできるようにする
+
+・WebJarsで取得した各種ライブラリを読み込む←Viewに記述
+<script src='@routes.WebJarAssets.at(WebJarAssets.locate("react/15.3.2/react-with-addons.min.js"))' type="text/javascript"></script>
+<script src='@routes.WebJarAssets.at(WebJarAssets.locate("react/15.3.2/react-dom.min.js"))' type="text/javascript"></script>
+<script src='@routes.WebJarAssets.at(WebJarAssets.locate("superagent/1.4.0/superagent.min.js"))' type="text/javascript"></script>
+
+・D:\app\assets\javascripts\以下にjsxファイルを配置する(無い場合は作成する)
+今回はreactTest.jsxを作成して配置している。
+
+・View側でjsファイルを呼び出す。
+<script src="@routes.Assets.versioned("javascripts/reactTest.js")" type="text/javascript"></script>
+※呼び出すのは.jsxでは無く.jsファイルなことに注意
+
+・後は普通に実行すれば実行できるはずです。
