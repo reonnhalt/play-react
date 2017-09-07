@@ -3,12 +3,13 @@
 # ~~~~
 
 
-GET     /                           controllers.ReactTest.index
+GET     /                           controllers.HomeWork.index
 GET     /home                       controllers.HomeController.index
 GET     /count                      controllers.CountController.count
 GET     /message                    controllers.AsyncController.message
 
-GET     /getJson                    controllers.ReactTest.getJson
+GET     /getJson                    controllers.HomeWork.getJson
+POST    /updateJson                 controllers.HomeWork.updateJson
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /webjars/*file              controllers.WebJarAssets.at(file)

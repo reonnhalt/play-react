@@ -1,0 +1,28 @@
+@(title: String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+        <script src='@routes.WebJarAssets.at(WebJarAssets.locate("react/15.3.2/react-with-addons.min.js"))' type="text/javascript"></script>
+        <script src='@routes.WebJarAssets.at(WebJarAssets.locate("react/15.3.2/react-dom.min.js"))' type="text/javascript"></script>
+        <script src='@routes.WebJarAssets.at(WebJarAssets.locate("superagent/1.4.0/superagent.min.js"))' type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("javascripts/homework.js")" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <!-- 
+        SPE社員全員が使用可能な採番システムを作る。
+        （immutableであるかどうかは問わないが、immutableであるとなお良い。CUIでも良い）
+        採番される番号フォーマットは”SPESXX-YYY”とする。
+        ただし、
+        ・SPES：文字列固定
+        ・XX：西暦の下2桁（2桁のゼロプレースホルダー）
+        ・-：文字固定
+        ・YYY：1からの連番（3桁のゼロプレースホルダー）
+        とする。
+        なお、DBは使用しない。
+        -->
+        <div id="main"></div>
+        <script>renderHomework()</script>
+    </body>
+</html>
